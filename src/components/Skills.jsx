@@ -1,3 +1,4 @@
+import React from 'react';
 import { FaDirections, FaPaintBrush, FaCode, FaMobileAlt } from 'react-icons/fa';
 
 function Skills({ isDarkMode }) {

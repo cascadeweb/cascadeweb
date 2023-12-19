@@ -1,3 +1,4 @@
+import React from 'react';
 import programtools from '/programtools.png';
 
 function Portfolio({ isDarkMode }) {
@@ -5,12 +6,12 @@ function Portfolio({ isDarkMode }) {
     <div className={`portfolio ${isDarkMode ? 'bg-blue-200' : 'bg-blue-200'} py-16 px-8`}>
       <div className="header flex items-center justify-between mb-12">
         <div className="info">
-          
           <h3 className={`text-6xl font-bold ${isDarkMode ? 'text-black' : 'text-black'}`}>My Portfolio</h3>
         </div>
       </div>
-      <div className="portfo-items flex gap-8">
-        <div className={`item w-1/3 rounded-lg overflow-hidden border-b-4 border-transparent cursor-pointer transition-all duration-300 hover:border-purple-600 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+      <div className="portfo-items grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Portfolio Item 1 */}
+        <div className={`item rounded-lg overflow-hidden border-b-4 border-transparent cursor-pointer transition-all duration-300 hover:border-purple-600 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
           <img src={programtools} alt="Project 1" className="w-full h-56 object-cover object-top rounded-t-lg" />
           <div className={`info p-8 ${isDarkMode ? 'text-white' : 'text-black'}`}>
             <h4 className="text-2xl font-bold mb-4">Code Source Finder</h4>
@@ -21,7 +22,8 @@ function Portfolio({ isDarkMode }) {
           </div>
         </div>
 
-        <div className={`item w-1/3 rounded-lg overflow-hidden border-b-4 border-transparent cursor-pointer transition-all duration-300 hover:border-purple-600 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+        {/* Portfolio Item 2 */}
+        <div className={`item rounded-lg overflow-hidden border-b-4 border-transparent cursor-pointer transition-all duration-300 hover:border-purple-600 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
           <img src={programtools} alt="Project 2" className="w-full h-56 object-cover object-top rounded-t-lg" />
           <div className={`info p-8 ${isDarkMode ? 'text-white' : 'text-black'}`}>
             <h4 className="text-2xl font-bold mb-4">Simple Blog Page</h4>
@@ -32,7 +34,8 @@ function Portfolio({ isDarkMode }) {
           </div>
         </div>
 
-        <div className={`item w-1/3 rounded-lg overflow-hidden border-b-4 border-transparent cursor-pointer transition-all duration-300 hover:border-purple-600 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+        {/* Portfolio Item 3 */}
+        <div className={`item rounded-lg overflow-hidden border-b-4 border-transparent cursor-pointer transition-all duration-300 hover:border-purple-600 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
           <img src={programtools} alt="Project 3" className="w-full h-56 object-cover object-top rounded-t-lg" />
           <div className={`info p-8 ${isDarkMode ? 'text-white' : 'text-black'}`}>
             <h4 className="text-2xl font-bold mb-4">Animated Nav Bar</h4>

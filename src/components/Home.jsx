@@ -1,3 +1,4 @@
+import React from 'react';
 import icon from '/vite.svg';
 
 function Home() {

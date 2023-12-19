@@ -1,8 +1,7 @@
-// Header.jsx
 import React, { useState } from 'react';
 import { Link, animateScroll as scroll } from 'react-scroll';
 import { FaSun, FaMoon, FaEnvelope } from 'react-icons/fa';
-import Contact from './Contact'; // Adjust the path based on your project structure
+import Contact from './Contact';
 
 function Header({ isDarkMode, toggleDarkMode }) {
   const [isContactModalOpen, setContactModalOpen] = useState(false);

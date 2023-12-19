@@ -49,7 +49,7 @@ function Footer({ isDarkMode }) {
         <div
           className={`text-gray-400 ${
             isDarkMode ? 'text-gray-500' : ''
-          }`}
+          } mb-4 lg:mb-0`}
         >
           &copy; 2023 Cascade. All rights reserved.
         </div>
