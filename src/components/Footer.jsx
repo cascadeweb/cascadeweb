@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-scroll';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
@@ -49,14 +50,14 @@ function Footer({ isDarkMode }) {
         <div
           className={`text-gray-400 ${
             isDarkMode ? 'text-gray-500' : ''
-          } mb-4 lg:mb-0`}
+          } mb-4 lg:mb-0 lg:mr-4 lg:text-left`}
         >
           &copy; 2023 Cascade. All rights reserved.
         </div>
         <div
           className={`text-gray-400 ${
             isDarkMode ? 'text-gray-500' : ''
-          }`}
+          } lg:text-right`}
         >
           Privacy Policy | Terms of Service | Cookies Settings
         </div>
