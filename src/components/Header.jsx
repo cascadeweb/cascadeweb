@@ -23,7 +23,7 @@ function Header({ isDarkMode, toggleDarkMode }) {
       <div className={`flex items-center justify-between h-20 ${isDarkMode ? 'bg-gray-800' : ''} mx-auto`}>
         <div className="logo flex items-center">
           <a onClick={scrollToTop} className={`font-bold text-lg cursor-pointer text-purple-600 ${isDarkMode ? 'text-white' : ''} ml-4`}>
-            Cascade
+            CascadeWeb
           </a>
         </div>
         <div className="categories flex-grow flex items-center justify-center">
