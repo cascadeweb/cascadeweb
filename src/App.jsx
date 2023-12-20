@@ -4,6 +4,7 @@ import Home from './components/Home';
 import Skills from './components/Skills';
 import About from './components/About';
 import Portfolio from './components/Portfolio';
+import Feetback from './components/Feedback';
 import Footer from './components/Footer';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       <Skills isDarkMode={isDarkMode} />
       <About isDarkMode={isDarkMode} />
       <Portfolio isDarkMode={isDarkMode} />
+      <Feetback isDarkMode={isDarkMode} />
       <Footer isDarkMode={isDarkMode} />
     </div>
   );

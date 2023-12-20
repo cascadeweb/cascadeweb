@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+// Import the useState and useEffect hooks
+import React, { useState, useEffect } from 'react';
 import { Link, animateScroll as scroll } from 'react-scroll';
 import { FaSun, FaMoon, FaEnvelope, FaBars, FaTimes } from 'react-icons/fa';
 import Contact from './Contact'; // Adjust the path based on your project structure
@@ -6,6 +7,15 @@ import Contact from './Contact'; // Adjust the path based on your project struct
 function Header({ isDarkMode, toggleDarkMode }) {
   const [isContactModalOpen, setContactModalOpen] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [headerHeight, setHeaderHeight] = useState(0);
+
+  // Use useEffect to get the height of the fixed header on mount
+  useEffect(() => {
+    const headerElement = document.getElementById('header');
+    if (headerElement) {
+      setHeaderHeight(headerElement.clientHeight);
+    }
+  }, []);
 
   const openContactModal = () => {
     setContactModalOpen(true);
@@ -24,7 +34,11 @@ function Header({ isDarkMode, toggleDarkMode }) {
   };
 
   const scrollToTop = () => {
-    scroll.scrollToTop();
+    scroll.scrollToTop({
+      smooth: true,
+      duration: 500,
+      offset: -headerHeight, // Adjust the offset based on your header height
+    });
     closeMobileMenu(); // Close the mobile menu after clicking a link
   };
 
@@ -37,7 +51,7 @@ function Header({ isDarkMode, toggleDarkMode }) {
   ];
 
   return (
-    <div className={`bg-white sticky top-0 px-0 ${isDarkMode ? 'dark-mode' : ''} w-full`}>
+    <div id="header" className={`bg-white sticky top-0 px-0 ${isDarkMode ? 'dark-mode' : ''} w-full`}>
       <div className={`flex sm:flex-row items-center justify-between h-20 ${isDarkMode ? 'bg-gray-800' : ''} mx-auto`}>
         <div className="logo flex items-center">
           <a onClick={scrollToTop} className={`font-bold text-lg cursor-pointer text-purple-600 ${isDarkMode ? 'text-white' : ''} ml-4`}>
@@ -49,7 +63,7 @@ function Header({ isDarkMode, toggleDarkMode }) {
           <ul className="flex space-x-8">
             {categories.map((category) => (
               <li key={category.id}>
-                <Link to={category.id} smooth={true} duration={500} onClick={scrollToTop} className={`${isDarkMode ? 'text-white' : ''}`}>
+                <Link to={category.id} smooth={true} duration={500} onClick={scrollToTop} offset={-headerHeight} className={`${isDarkMode ? 'text-white' : ''}`}>
                   {category.label}
                 </Link>
               </li>
@@ -88,7 +102,7 @@ function Header({ isDarkMode, toggleDarkMode }) {
       {/* Mobile menu */}
       {isMobileMenuOpen && (
         <div className="fixed top-0 right-0 h-full bg-white w-full sm:w-64 overflow-hidden">
-          <div className="flex flex-col items-center h-full">
+          <div className="flex flex-col items-center h-full p-4 pr-8">
             {/* Close button for the mobile menu */}
             <button
               onClick={closeMobileMenu}
@@ -96,10 +110,10 @@ function Header({ isDarkMode, toggleDarkMode }) {
             >
               <FaTimes size={20} />
             </button>
-            <ul className="flex flex-col items-center gap-4 mt-8 p-4">
+            <ul className="flex flex-col items-center gap-4 mt-8">
               {categories.map((category) => (
                 <li key={category.id}>
-                  <Link to={category.id} smooth={true} duration={500} onClick={scrollToTop} className="text-purple-600">
+                  <Link to={category.id} smooth={true} duration={500} onClick={scrollToTop} offset={-headerHeight} className="text-purple-600">
                     {category.label}
                   </Link>
                 </li>

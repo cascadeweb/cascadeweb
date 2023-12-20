@@ -15,7 +15,7 @@ function Footer({ isDarkMode }) {
               isDarkMode ? 'text-white' : 'text-purple-600'
             }`}
           >
-            Cascade
+            CascadeWeb
           </Link>
         </div>
         <div className="lg:flex-grow flex items-center justify-end mb-4 lg:mb-0">
@@ -52,7 +52,7 @@ function Footer({ isDarkMode }) {
             isDarkMode ? 'text-gray-500' : ''
           } mb-4 lg:mb-0 lg:mr-4 lg:text-left`}
         >
-          &copy; 2023 Cascade. All rights reserved.
+          &copy; 2023 CascadeWeb. All rights reserved.
         </div>
         <div
           className={`text-gray-400 ${
